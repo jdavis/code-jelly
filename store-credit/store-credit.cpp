@@ -1,5 +1,7 @@
+#include <cstdio>
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -9,21 +11,34 @@ using namespace std;
 
 class StoreCredit {
     public:
+        void print();
         void setCredit(int c);
+        void setItemsLength(int l);
         void setItems(int gItems[]);
         pair<int, int> *buyItems();
 
     private:
         int credit;
+        int itemsLength;
         int items[];
-}
+};
 
 //
 // Class Definition
 //
 
+void StoreCredit::print() {
+    cout << "StoreCredit:" << endl;
+    cout << "\tTotal Credit: " << credit << endl;
+    cout << "\tItems Length:" << itemsLength << endl;
+}
+
 void StoreCredit::setCredit(int c) {
     credit = c;
+}
+
+void StoreCredit::setItemsLength(int l) {
+    itemsLength = l;
 }
 
 void StoreCredit::setItems(int gItems[]) {
@@ -43,13 +58,54 @@ pair<int, int> *StoreCredit::buyItems() {
 int usage();
 
 int main(int argc, const char *argv[]) {
-    string line;
+    int x, l, i;
+    int *items;
     ifstream f;
+    string line;
+    pair<int, int> *result;
+    vector<StoreCredit> stores;
 
     if (argc == 1) return usage();
     else if (argc > 2) return usage();
 
     f.open(argv[1]);
+
+    // Read all StoreInfo
+    while(f.good()) {
+        StoreCredit store;
+
+        // Read first value, credit
+        getline(f, line);
+        sscanf(line.c_str(), "%d", &x);
+        store.setCredit(x);
+
+        // Read second value, the number of items
+        getline(f, line);
+        sscanf(line.c_str(), "%d", &l);
+        store.setItemsLength(l);
+
+        // Read next line, all item prices
+        items = new int[l];
+
+        getline(f, line);
+        for(i = 0; i < l; i++) {
+            sscanf(line.c_str(), "%d", &x);
+            items[i] = x;
+        }
+
+        store.setItems(items);
+        stores.push_back(store);
+
+        store.print();
+
+        delete items;
+    }
+
+    for(i = 0; i < stores.size(); i++) {
+        cout << "Case #" << i + 1 << ": ";
+        result = stores[i].buyItems();
+        cout << result->first << " " << result->second << endl;
+    }
 
     return 0;
 }
