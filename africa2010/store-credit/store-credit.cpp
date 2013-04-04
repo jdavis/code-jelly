@@ -85,8 +85,8 @@ void StoreCredit::setItemsFromString(string s) {
 pair<int, int> *StoreCredit::buyItems() {
     int i, j;
 
-    for(i = 0; i < itemsLength; i++) {
-        for(j = i + 1; j < itemsLength; j++) {
+    for (i = 0; i < itemsLength; i++) {
+        for (j = i + 1; j < itemsLength; j++) {
             if (items[i].value + items[j].value == credit) {
                 if (items[i].position > items[j].position) {
                     return new pair<int, int>(items[j].position, items[i].position);
@@ -125,7 +125,7 @@ int main(int argc, const char *argv[]) {
     StoreCredit *stores = new StoreCredit[nCases];
 
     // Read all StoreInfo
-    for(i = 0; i < nCases; i++) {
+    for (i = 0; i < nCases; i++) {
         StoreCredit *store = &stores[i];
 
         // Set the credit limit
