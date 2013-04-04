@@ -1,30 +1,52 @@
+#include <algorithm>
 #include <cstdio>
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
 //
-// Class Declaration
+// Class Declarations
 //
+
+class Item {
+    public:
+        int position;
+        int value;
+
+        static bool comp(const Item &i1, const Item &i2);
+};
 
 class StoreCredit {
     public:
         void print();
-        void setCredit(int c);
-        void setItemsLength(int l);
-        void setItems(int gItems[]);
+        void setCreditFromString(string s);
+        void setItemsLengthFromString(string s);
+        void setItemsFromString(string s);
         pair<int, int> *buyItems();
+        pair<int, int> *buyItems1();
 
     private:
         int credit;
         int itemsLength;
-        int items[];
+        Item *items;
 };
 
 //
-// Class Definition
+// Class Definitions
+//
+
+//
+// Item Class
+//
+
+bool Item::comp(const Item &i1, const Item &i2) {
+    return (i1.value < i2.value);
+}
+
+//
+// StoreCredit Class
 //
 
 void StoreCredit::print() {
@@ -33,21 +55,50 @@ void StoreCredit::print() {
     cout << "\tItems Length:" << itemsLength << endl;
 }
 
-void StoreCredit::setCredit(int c) {
-    credit = c;
+void StoreCredit::setCreditFromString(string s) {
+    credit = atoi(s.c_str());
 }
 
-void StoreCredit::setItemsLength(int l) {
-    itemsLength = l;
+void StoreCredit::setItemsLengthFromString(string s) {
+    itemsLength = atoi(s.c_str());
 }
 
-void StoreCredit::setItems(int gItems[]) {
-    for(int i = 0; i < sizeof(gItems) / sizeof(int); i++) {
-        items[i] = gItems[i];
+void StoreCredit::setItemsFromString(string s) {
+    int i, j, k;
+    string word;
+
+    items = new Item[itemsLength];
+
+    for(i = 0, j = 0; i < itemsLength && j < s.size(); i++) {
+        k = s.find(' ', j);
+        word = s.substr(j, k);
+        items[i].position = i;
+        items[i].value = atoi(word.c_str());
+        j = k + 1;
     }
+
+    sort(items, items + itemsLength, Item::comp);
 }
 
 pair<int, int> *StoreCredit::buyItems() {
+    return buyItems1();
+}
+
+pair<int, int> *StoreCredit::buyItems1() {
+    int i, j;
+
+    for(i = 0; i < itemsLength; i++) {
+        for(j = i + 1; j < itemsLength; j++) {
+            if (items[i].value + items[j].value == credit) {
+                if (items[i].position > items[j].position) {
+                    return new pair<int, int>(items[j].position, items[i].position);
+                } else {
+                    return new pair<int, int>(items[i].position, items[j].position);
+                }
+            }
+        }
+    }
+
     return new pair<int, int>;
 }
 
@@ -58,54 +109,50 @@ pair<int, int> *StoreCredit::buyItems() {
 int usage();
 
 int main(int argc, const char *argv[]) {
-    int x, l, i;
-    int *items;
-    ifstream f;
+    int nCases, i;
+    ifstream file;
     string line;
     pair<int, int> *result;
-    vector<StoreCredit> stores;
 
+    // Check...
     if (argc == 1) return usage();
     else if (argc > 2) return usage();
 
-    f.open(argv[1]);
+    file.open(argv[1]);
+
+    // Read the number of cases defined
+    getline(file, line);
+    sscanf(line.c_str(), "%d", &nCases);
+
+    StoreCredit *stores = new StoreCredit[nCases];
 
     // Read all StoreInfo
-    while(f.good()) {
-        StoreCredit store;
+    for(i = 0; i < nCases; i++) {
+        StoreCredit *store = &stores[i];
 
-        // Read first value, credit
-        getline(f, line);
-        sscanf(line.c_str(), "%d", &x);
-        store.setCredit(x);
+        // Set the credit limit
+        getline(file, line);
+        store->setCreditFromString(line);
 
-        // Read second value, the number of items
-        getline(f, line);
-        sscanf(line.c_str(), "%d", &l);
-        store.setItemsLength(l);
+        // Set the number of items
+        getline(file, line);
+        store->setItemsLengthFromString(line);
 
-        // Read next line, all item prices
-        items = new int[l];
+        // Set the actual items
+        getline(file, line);
+        store->setItemsFromString(line);
 
-        getline(f, line);
-        for(i = 0; i < l; i++) {
-            sscanf(line.c_str(), "%d", &x);
-            items[i] = x;
-        }
-
-        store.setItems(items);
-        stores.push_back(store);
-
-        store.print();
-
-        delete items;
+        stores[i].print();
     }
 
-    for(i = 0; i < stores.size(); i++) {
+    for(i = 0; i < nCases; i++) {
         cout << "Case #" << i + 1 << ": ";
         result = stores[i].buyItems();
-        cout << result->first << " " << result->second << endl;
+        cout << result->first + 1 << " " << result->second + 1 << endl;
     }
+
+    // Cleanup
+    file.close();
 
     return 0;
 }
