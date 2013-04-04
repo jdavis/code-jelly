@@ -8,26 +8,24 @@ some past problems.
 
 ## Practice Problems
 
-### Africa 2010, Qualification Round:
+### Recommended for Newbies
 * [Store Credit](store-credit/)
 * [Reverse Words]()
-
-### Code Jam 2008, Round 1A:
 * [Minimum Scalar Product](minimum-scalar/)
-
-### Code Jam 2009, Qualification Round:
 * [Alien Language]()
-
-### Code Jam 2010, Round 1C:
 * [Rope Intranet]()
-
-### Code Jam 2010, Round 1B:
 * [File Fix-it]()
-
-### Code Jam 2010, Round 1A:
 * [Rotate]()
-
-### Code Jam 2009, Round 1C:
 * [All Your Base]()
+
+### Past Contests
+* [Code Jam 2012](2012/)
+* [Code Jam 2011](2011/)
+* [Code Jam 2010](2010/)
+* [Code Jam 2009](2009/)
+* [Code Jam 2008](2008/)
+* [Code Jam for Veterans 2013](veterans2013/)
+* [Practice Contests](practice/)
+* [EuroPython 2011](europython/)
 
 [Code Jam]: https://code.google.com/codejam/
