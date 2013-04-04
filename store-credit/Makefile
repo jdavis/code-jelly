@@ -1,6 +1,6 @@
 CPP = g++
 CPPFLAGS = -Wall --pedantic
-TARGETS = result
+TARGETS = store
 OBJECTS = store-credit.o
 
 default: $(DEPS) $(TARGETS)
@@ -8,10 +8,10 @@ default: $(DEPS) $(TARGETS)
 $(TARGETS): $(OBJECTS)
 
 store:
-	$(CPP) -o $@ $^ $(CPPFLAGS)
+	$(CPP) -o a.out $^ $(CPPFLAGS)
 
 test-sample: $(TARGETS)
-	./result sample.in
+	./a.out sample.in
 
 clean:
 	rm $(OBJECTS)
