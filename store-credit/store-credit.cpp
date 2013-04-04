@@ -25,7 +25,7 @@ class StoreCredit {
         void setItemsLengthFromString(string s);
         void setItemsFromString(string s);
         pair<int, int> *buyItems();
-        pair<int, int> *buyItems1();
+        pair<int, int> *buyItemsOptimized();
 
     private:
         int credit;
@@ -81,10 +81,6 @@ void StoreCredit::setItemsFromString(string s) {
 }
 
 pair<int, int> *StoreCredit::buyItems() {
-    return buyItems1();
-}
-
-pair<int, int> *StoreCredit::buyItems1() {
     int i, j;
 
     for(i = 0; i < itemsLength; i++) {
