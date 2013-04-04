@@ -25,7 +25,6 @@ some past problems.
 * [Code Jam 2009](2009/)
 * [Code Jam 2008](2008/)
 * [Code Jam for Veterans 2013](veterans2013/)
-* [Practice Contests](practice/)
-* [EuroPython 2011](europython/)
+* [EuroPython 2011](europython2011/)
 
 [Code Jam]: https://code.google.com/codejam/
