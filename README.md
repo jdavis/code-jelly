@@ -9,9 +9,9 @@ some past problems.
 ## Practice Problems
 
 ### Recommended for Newbies
-* [Store Credit](store-credit/)
+* [Store Credit](africa2010/store-credit/)
 * [Reverse Words]()
-* [Minimum Scalar Product](minimum-scalar/)
+* [Minimum Scalar Product](2008/minimum-scalar/)
 * [Alien Language]()
 * [Rope Intranet]()
 * [File Fix-it]()
