@@ -18,11 +18,13 @@ input, small input, and large input (when available).
 
 To run each problem, just issue one of the commands below:
 
+```sh
     # cd into the desired problem's directory
     cd africa2010/store-credit/
 
     # Make and run the desired output
     make small
+```
 
 ## Practice Problems
 
