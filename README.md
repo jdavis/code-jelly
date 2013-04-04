@@ -7,7 +7,7 @@ code-jelly
 Google's 2013 [Code Jam][Code Jam] is coming up! This is where I practice for it and solve
 some past problems.
 
-## Style-Guide
+## Style Guide
 As with almost all the languages Google uses, they have provided a style guide
 for C++. I have tried to follow it as closely as possible. To see the guide, go
 [here](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml).
