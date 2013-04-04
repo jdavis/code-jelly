@@ -10,6 +10,12 @@ using namespace std;
 // Class Declarations
 //
 
+/**
+ * Container class for each item in the list. The reason for this is because the
+ * items are sorted to improve lookup time and the position is lost. This
+ * preserves the position for when determining the values to add up to the
+ * credit limit.
+ */
 class Item {
     public:
         int position;
@@ -18,6 +24,10 @@ class Item {
         static bool comp(const Item &i1, const Item &i2);
 };
 
+/**
+ * Main class for the problem. Encapsulates the algorithm and data for each test
+ * case.
+ */
 class StoreCredit {
     public:
         void print();
@@ -37,17 +47,9 @@ class StoreCredit {
 // Class Definitions
 //
 
-//
-// Item Class
-//
-
 bool Item::comp(const Item &i1, const Item &i2) {
     return (i1.value < i2.value);
 }
-
-//
-// StoreCredit Class
-//
 
 void StoreCredit::print() {
     cout << "StoreCredit:" << endl;
