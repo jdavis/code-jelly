@@ -142,7 +142,7 @@ int main(int argc, const char *argv[]) {
         getline(file, line);
         store->setItemsFromString(line);
 
-        stores[i].print();
+        //stores[i].print();
     }
 
     for(i = 0; i < nCases; i++) {
