@@ -30,7 +30,7 @@ To run each problem, just issue one of the commands below:
 
 ### Recommended for Newbies
 * [Store Credit](africa2010/store-credit/)
-* [Reverse Words]()
+* [Reverse Words](africa2010/reverse-words/)
 * [Minimum Scalar Product](2008/minimum-scalar/)
 * [Alien Language]()
 * [Rope Intranet]()
