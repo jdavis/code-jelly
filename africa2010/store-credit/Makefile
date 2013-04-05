@@ -1,23 +1,23 @@
 CPP = g++
 CPPFLAGS = -Wall --pedantic
-TARGETS = store
-OBJECTS = store-credit.o
+TARGETS = solution
+OBJECTS = solution.o
 
 default: $(DEPS) $(TARGETS)
 
 $(TARGETS): $(OBJECTS)
 
-store:
+solution:
 	@$(CPP) -o a.out $^ $(CPPFLAGS)
 
 sample: $(TARGETS)
 	@./a.out sample.in
 
 small: $(TARGETS)
-	@./a.out A-small-practice.in
+	@./a.out small-practice.in
 
 large: $(TARGETS)
-	@./a.out A-large-practice.in
+	@./a.out large-practice.in
 
 clean:
 	rm $(OBJECTS)
