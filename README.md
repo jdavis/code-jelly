@@ -22,8 +22,17 @@ To run each problem, just issue one of the commands below:
     # cd into the desired problem's directory
     cd africa2010/store-credit/
 
-    # Make and run the desired output
+    # Make and run with sample input
+    make sample
+
+    # Make and run with small input
     make small
+
+    # Make and run with large input
+    make large
+
+    # Clean up the directory
+    make clean
 ```
 
 ## Practice Problems
