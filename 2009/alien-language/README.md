@@ -44,15 +44,15 @@ in the alien language match the pattern.
 
 ### Small dataset
 
-1 ≤ L ≤ 10
-1 ≤ D ≤ 25
-1 ≤ N ≤ 10
+    1 ≤ L ≤ 10
+    1 ≤ D ≤ 25
+    1 ≤ N ≤ 10
 
 ### Large dataset
 
-1 ≤ L ≤ 15
-1 ≤ D ≤ 5000
-1 ≤ N ≤ 500
+    1 ≤ L ≤ 15
+    1 ≤ D ≤ 5000
+    1 ≤ N ≤ 500
 
 ## Sample
 
