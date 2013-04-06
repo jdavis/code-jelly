@@ -41,7 +41,7 @@ To run each problem, just issue one of the commands below:
 * [Store Credit](africa2010/store-credit/)
 * [Reverse Words](africa2010/reverse-words/)
 * [Minimum Scalar Product](2008/minimum-scalar/)
-* Alien Language
+* [Alien Language](2009/alien-language/)
 * Rope Intranet
 * File Fix-it
 * Rotate
