@@ -3,11 +3,12 @@ CPPFLAGS = -Wall --pedantic
 TARGETS = solution
 OBJECTS = solution.o
 
-default: $(DEPS) $(TARGETS)
+default: $(TARGETS)
 
-$(TARGETS): $(OBJECTS)
+%.o: %.cpp
+	@$(CPP) -c -o $@ $< $(CPPFLAGS)
 
-solution:
+solution: $(OBJECTS)
 	@$(CPP) -o a.out $^ $(CPPFLAGS)
 
 sample: $(TARGETS)
@@ -21,4 +22,4 @@ large: $(TARGETS)
 
 clean:
 	rm $(OBJECTS)
-	rm $(TARGETS)
+	rm a.out
