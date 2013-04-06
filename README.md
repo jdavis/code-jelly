@@ -41,11 +41,11 @@ To run each problem, just issue one of the commands below:
 * [Store Credit](africa2010/store-credit/)
 * [Reverse Words](africa2010/reverse-words/)
 * [Minimum Scalar Product](2008/minimum-scalar/)
-* [Alien Language]()
-* [Rope Intranet]()
-* [File Fix-it]()
-* [Rotate]()
-* [All Your Base]()
+* Alien Language
+* Rope Intranet
+* File Fix-it
+* Rotate
+* All Your Base
 
 ### Main Past Contests
 * [Code Jam 2012](2012/)
