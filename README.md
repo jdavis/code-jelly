@@ -47,14 +47,18 @@ To run each problem, just issue one of the commands below:
 * [Rotate]()
 * [All Your Base]()
 
-### Past Contests
+### Main Past Contests
 * [Code Jam 2012](2012/)
 * [Code Jam 2011](2011/)
 * [Code Jam 2010](2010/)
 * [Code Jam 2009](2009/)
 * [Code Jam 2008](2008/)
+
+### Other Contests
 * [Code Jam for Veterans 2013](veterans2013/)
+* [Code Jam Africa 2011](africa2011/)
 * [EuroPython 2011](europython2011/)
+* [Code Jam Africa 2010](africa2010/)
 
 ## License
 All code is licensed under the MIT License. For the complete license, check
