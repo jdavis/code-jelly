@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <stdint.h>
 
 using namespace std;
 
@@ -13,17 +14,17 @@ using namespace std;
 
 class ScalarProduct {
     public:
-        void setSize(int size);
+        void setSize(size_t size);
         void setFirstVector(string line);
         void setSecondVector(string line);
         void print();
-        int calculateMin();
-        static int reverseCmp(int x, int y);
+        long int calculateMin();
+        static long int reverseCmp(long int x, long int y);
 
     public:
-        int size;
-        int *first;
-        int *second;
+        size_t size;
+        long int *first;
+        long int *second;
 
 };
 
@@ -31,14 +32,14 @@ class ScalarProduct {
 // Definition
 //
 
-void ScalarProduct::setSize(int size) {
+void ScalarProduct::setSize(size_t size) {
     this->size = size;
-    first = new int[size];
-    second = new int[size];
+    first = new long int[size];
+    second = new long int[size];
 }
 
 void ScalarProduct::setFirstVector(string line) {
-    int i, j, k;
+    size_t i, j, k;
     string word;
 
     for(i = 0, j = 0; i < size; i++) {
@@ -51,10 +52,10 @@ void ScalarProduct::setFirstVector(string line) {
 }
 
 void ScalarProduct::setSecondVector(string line) {
-    int i, j, k;
+    size_t i, j, k;
     string word;
 
-    for(i = 0, j = 0; i < size; i++) {
+    for (i = 0, j = 0; i < size; i++) {
         k = j;
         j = line.find(' ', j);
         word = line.substr(k, j);
@@ -65,7 +66,7 @@ void ScalarProduct::setSecondVector(string line) {
 
 
 void ScalarProduct::print() {
-    int i;
+    size_t i;
 
     cout << "First: ";
     for (i = 0; i < size; i++) {
@@ -93,8 +94,9 @@ void ScalarProduct::print() {
  *
  *      Will be calculated as: -9*8 + -5*6 + 1*4 + 2*2 + 8*0
  */
-int ScalarProduct::calculateMin() {
-    int i, sum;
+long int ScalarProduct::calculateMin() {
+    size_t i;
+    long int sum;
 
     sort(first, first + size);
     sort(second, second + size);
@@ -107,7 +109,7 @@ int ScalarProduct::calculateMin() {
     return sum;
 }
 
-int ScalarProduct::reverseCmp(int x, int y) {
+long int ScalarProduct::reverseCmp(long int x, long int y) {
     return (x * x) > (y * y);
 }
 
