@@ -2,22 +2,40 @@ Google Code Jam 2008
 ====================
 
 ## Qualification Round
-* TODO
+* Saving the Universe
+* Train Timetable
+* Fly Swatter
 
 ## Round 1A
-* TODO
+* [Minimum Scalar Product](minimum-scalar/)
+* Milkshakes
+* Numbers
 
 ## Round 1B
-* TODO
+* Crop Triangles
+* Number Sets
+* Mousetrap
 
 ## Round 1C
-* TODO
+* Text Messaging Outrage
+* Ugly Numbers
+* Increasing Speed Limits
 
 ## Round 2
-* TODO
+* Cheating a Boolean Tree
+* Triangle Areas
+* Star Wars
+* PermRLE
 
 ## Round 3
-* TODO
+* How Big Are the Pockets?
+* Portal
+* No Cheating
+* Endless Knight
 
 ## World Finals
-* TODO
+* Juice
+* Ping Pong Balls
+* Mine Layer
+* Bridge Builders
+* The Year of Code Jam
