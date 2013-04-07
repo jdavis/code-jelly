@@ -13,7 +13,7 @@ seen as points on its right wall, and the windows on the right building are seen
 as points on its left wall. Wires are straight segments connecting a window on
 the left building to a window on the right building.
 
-![img.png]
+![Rope Intranet Image][img.png]
 
 You've noticed that no two wires share an endpoint (in other words, there's at
 most one wire going out of each window). However, from your viewpoint, some of
