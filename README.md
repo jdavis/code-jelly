@@ -42,7 +42,7 @@ To run each problem, just issue one of the commands below:
 * [Reverse Words](africa2010/reverse-words/)
 * [Minimum Scalar Product](2008/minimum-scalar/)
 * [Alien Language](2009/alien-language/)
-* Rope Intranet
+* [Rope Intranet](2010/rope-intranet/)
 * File Fix-it
 * Rotate
 * All Your Base
