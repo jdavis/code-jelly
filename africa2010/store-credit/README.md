@@ -1,3 +1,6 @@
+Store Credit
+============
+
 ## Problem
 
 You receive a credit C at a local store and would like to buy two items. You
